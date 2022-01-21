@@ -5,7 +5,7 @@ Technologies and Tools used:
 
 Python,Pandas,NumPy,MatPlotlib, Seaborn, Scikit-learn(Machine Learning), Jupyter Notebook
 
-Problem:
+##Problem:
 
 The 2015-16 season was one of the most exciting NBA seasons in modern times. Shooting is an important part of basketball and I thought it would be interesting to see the most important factors in the success of the shot. 
 The main target audience of this project would be:
