@@ -40,7 +40,7 @@ Columns that are unnecessary towards the outcome such as URL,location etc were r
 Exploratory Data Analysis involves exploring the data and selecting the variables for further modeling. It was interesting to see the variables as numerical and categorical.     
 The shot Outcome is the target variable: 
 
-![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image1.png)
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image11.png)
 
 For the Numerical Variables: 
 
@@ -50,6 +50,7 @@ Quarter, SecLeft, ShotDist seem the most relevant to the target. Scores not so m
 
 
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image13.png)
 
 
 
@@ -68,23 +69,29 @@ Quarter, SecLeft, ShotDist seem the most relevant to the target. Scores not so m
 Kernel Distribution plots are useful for understanding the relationship between variables. 
 Here I made a few :
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image14.png)
 
 
 Frequency of Shot Distance in feet
 
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image1.png)
+
+
+SecondLeft vs Outcome (KDE): 
+
+
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image5.png)
 
 
 
 
+Frequency of Seconds Left: 
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image7.png)
 
-
-
-Frequency of Seconds Left
-
-
-
+Quarter vs Outcome (KDE)
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image16.png)
 
 
 
@@ -102,14 +109,9 @@ Relevant ones: ShotType, ShotOutcome, Shooter, Assister
 
 
 
+ShotType:
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image17.png)
 
-
-
-
-
-
-
-ShotType
 
 
 
@@ -122,12 +124,21 @@ ShotType
 
 
 
-Shooters and Assisters
+Shooters and Assisters:
+
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image10.png)
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image4.png)
 
 
 
 
+Final Variable Selection:
+From the EDA we can finally confirm the variavles fro modeling. 
 
+Target: 
+Shot Outcome
+
+Variables:
 
 Shot Distance 
 Seconds Left in the quarter 
@@ -149,13 +160,23 @@ Logistic Regression
 We get an accuracy of 81.52%. This is a strong score relative to the baseline of 54%.
 This is the confusion matrix for logistic regression.
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image12.png)
 
 
 
 
 Decision Tree
 
-For the decision tree we get a weaker score but still better than the baseline accuracy. 
+For the decision tree we get a weaker score but still better than the baseline accuracy. It has an accuracy score of 62%. 
+
+Below is the confusion matrix: 
+
+
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image3.png)
+
+
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image6.png)
+
 
 
 
@@ -164,7 +185,11 @@ For the decision tree we get a weaker score but still better than the baseline a
 Random Forests 
 
 Similar to the decision tree the random forests also give us a score weaker than the logistic regression. 
-Below is the confusion matrix and the various scores such as the precision, recall, and f-1 score. 
+Below is the confusion matrix as well as the various scores such as the precision, recall, and f-1 score. 
+
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image15.png)
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image2.png)
+
 
 
 
@@ -196,6 +221,7 @@ However, the random forests help us calculate the feature importance to see whic
 # Feature importance:
 This is great in understanding the importance factors for shot outcome. It's clear that shot distance and shot type are major factors followed by the shot assisters and seconds left. 
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image9.png)
 
 
 
