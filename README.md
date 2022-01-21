@@ -20,12 +20,13 @@ Plays: NBA plays are carried out by the offensive team(team who has the ball). I
 Two types of endings to a play - Shot or No Shot
 We are interested only in plays. 
 
-Data Acquisition 
+# Data Acquisition:
 
 The data acquisition was fairly simple. The data was taken from basketball-reference.com. It is a play-by-play dataset of all the plays in the 2015-16 season. 
 Hence, the acquisition was simply downloading the data as a .csv file.
 
-Data Cleaning and Exploration 
+# Data Cleaning and Exploratory Data Analysis(EDA):
+
 All the work in this project was done in a Jupyter notebook using Python and its packages. 
 
 
@@ -40,25 +41,8 @@ Exploratory Data Analysis involves exploring the data and selecting the variable
 The shot Outcome is the target variable: 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 For the Numerical Variables: 
+
 
 There are 5 numerical variables : Quarter, SecLeft, AwayScore, HomeScore, ShotDist
 Quarter, SecLeft, ShotDist seem the most relevant to the target. Scores not so much.
@@ -154,7 +138,7 @@ Shooter
 
 
 
-Modeling and Predictions  
+# Modeling and Predictions:  
 
 I ran 3 models :
 Logistic Regression 
@@ -208,13 +192,13 @@ However, the random forests help us calculate the feature importance to see whic
 
 
 
-Feature importance 
+# Feature importance:
 This is great in understanding the importance factors for shot outcome. It's clear that shot distance and shot type are major factors followed by the shot assisters and seconds left. 
 
 
 
 
-Conclusion 
+# Conclusion:
 
 The Logistic Regression model performs the best at predicting the Outcome with an accuracy score of 81%. A strong improvement over the baseline(54%). 
 The other two models, Random forests and Decision Trees are not as good but still better than baseline at approximately 61/62%.
@@ -238,7 +222,7 @@ Followed by Assisters.
 
 
 
-Key Takeaways and Moving Forward
+# Key Takeaways and Moving Forward: 
 
 I could have used a shot log dataset over a play by play-by-play dataset. There could be more variables that may help in predicting target(ShotOutcome) better.
 Adding more seasons and increasing the size of the dataset. This would be more representative of the players. 
