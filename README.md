@@ -5,7 +5,7 @@ Technologies and Tools used:
 
 Python,Pandas,NumPy,MatPlotlib, Seaborn, Scikit-learn(Machine Learning), Jupyter Notebook
 
-##Problem:
+# Problem:
 
 The 2015-16 season was one of the most exciting NBA seasons in modern times. Shooting is an important part of basketball and I thought it would be interesting to see the most important factors in the success of the shot. 
 The main target audience of this project would be:
@@ -38,6 +38,7 @@ Columns that are unnecessary towards the outcome such as URL,location etc were r
 
 Exploratory Data Analysis involves exploring the data and selecting the variables for further modeling. It was interesting to see the variables as numerical and categorical.     
 The shot Outcome is the target variable: 
+
 
 
 
