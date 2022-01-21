@@ -40,6 +40,7 @@ Columns that are unnecessary towards the outcome such as URL,location etc were r
 Exploratory Data Analysis involves exploring the data and selecting the variables for further modeling. It was interesting to see the variables as numerical and categorical.     
 The shot Outcome is the target variable: 
 
+![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image1.png)
 
 For the Numerical Variables: 
 
