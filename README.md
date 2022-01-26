@@ -38,7 +38,14 @@ Summary of steps:
 * Shot Outcome with null values were dropped 
 * Columns that are unnecessary towards the outcome such as URL,location etc were removed. 
 
-Exploratory Data Analysis involves exploring the data and selecting the variables for further modeling. It was interesting to see the variables as numerical and categorical.     
+Exploratory Data Analysis involved exploring the data and selecting the variables for further modeling. The whole process helped underline all the trends and factors towards the target. The plots and graphs below highlight these relationships between them. 
+
+The variables were divided into two: numerical and categorical. There were 5 numerical variables and 31 categorical variables. 
+
+First step involved displaying and exploring basic information of the data. This involved but not limited to looking at the rows and columns, counting the number of values in each variable, number of types of each variable and so on. It was fairly straightforward figuring out which feature would be impactful or not. Plots showing insignificant relationships were rejected. The rest were selected. This was done mainly for the numerical variables. 
+
+Summarizing the data using crosstab function also helps displaying the frequency with which certain data points appear with respect to the ShotOutcome function. The value counts functions also helped in this regard.
+     
 The shot Outcome is the target variable: 
 
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image11.png)
@@ -110,7 +117,7 @@ Home and Away Scores seem quite insignificant. Can be ignored.
 Categorical Variables:
 
 
-There are 31 categorical variables. Most were removed during the cleaning process. Many are not shot related. Most seem inconsequential to the target. Only 3 seemed interesting, the rest were rejected. 
+There are 31 categorical variables. The majority are not shot related. Most seem inconsequential to the target. Only 3 seemed interesting, the rest can be rejected. Almost all of them were removed after the cleaning process since they are inconsequential to shooting. 
 Relevant ones: ShotType, ShotOutcome, Shooter, Assister 
 
 
@@ -137,12 +144,13 @@ Target:
 
 Variables:
 
-* Shot Distance 
-* Seconds Left in the quarter 
-* Quarter
-* Shot Type
-* Assister 
-* Shooter
+* Shot Distance - The distance between the shooters position to the basketball hoop. This can range from 0 to 92 feet.
+* Quarter - Basketball games have 4 quarters. Each 12 minutes long.
+* Seconds Left in the quarter  - The number of seconds left in the quarter when the shot is taken.  
+* Shot Type - There are quite a few types of shots as shown above. Jump shot, layup and dunk are among the most common. 
+* Assister - The assister is the player who passes the ball to the shooter. A shooter has to make a successful shot for an assist to be counted.
+* Shooter - The player who shoots the ball. 
+
 
 
 
@@ -156,7 +164,9 @@ I ran 3 main models :
 
 Logistic Regression:
 
-We get an accuracy of 81.52%. This is a strong score relative to the baseline of 54%.
+This is the most common binary classifier and is quite effective in most cases. 
+We get an accuracy of 81.52%. This is a very strong score relative to the baseline of 54%.
+The data is standardized before the model is fit. This method is the most simple for classification models and a reason why it's quite effective. 
 Below is the confusion matrix as well as the various scores such as the precision, recall, and f-1 score. 
 
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image12.png)
@@ -166,8 +176,7 @@ Below is the confusion matrix as well as the various scores such as the precisio
 
 Decision Trees: 
 
-For the decision tree we get a weaker score but still better than the baseline accuracy. It has an accuracy score of 62%. 
-
+For the decision tree we get a weaker score but still better than the baseline accuracy. This model uses trees to classify the outcome.  The model score is 62.45% which is still an improvement over the baseline of 54%. However it is still fairly weak. It's hard to say why the score is weaker than the logistic regression; maybe because it simplifies the relationships between features more than logistic regression. 
 Below is the confusion matrix as well as the various scores such as the precision, recall, and f-1 score. 
 
 
@@ -179,7 +188,7 @@ Below is the confusion matrix as well as the various scores such as the precisio
 
 Random Forests:
 
-Similar to the decision tree the random forests also give us a score weaker than the logistic regression. 
+Similar to the decision tree the random forests also give us a score weaker than the logistic regression. Generally random forests perform in a similar way to the decision tree. OS may not improve especially in data like this. 
 Below is the confusion matrix as well as the various scores such as the precision, recall, and f-1 score. 
 
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image15.png)
@@ -188,15 +197,14 @@ Below is the confusion matrix as well as the various scores such as the precisio
 
 
 
-However, the random forests help us calculate the feature importance to see which features were the most impactful for predicting the shot outcome. 
-
+However, the random forests help us calculate the feature importance to see which features are the most impactful for calculating the shot outcome. This is the best part of it.
 
 
 
 
 
 # Feature importance:
-This is great in understanding the importance factors for shot outcome. It's clear that shot distance and shot type are major factors followed by the assisters and the seconds left. 
+This is great in understanding the importance factors for shot outcome. It's clear that shot distance and shot type are major factors followed by the assisters and seconds left. 
 
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image9.png)
 
@@ -215,11 +223,14 @@ This is great in understanding the importance factors for shot outcome. It's cle
 
 # Key Takeaways and Moving Forward: 
 
-* I could have used a shot log dataset over a play by play-by-play dataset. There could be more variables that may help in predicting target(ShotOutcome) better.
-Adding more seasons and increasing the size of the dataset. This would be more representative of the players. 
+* Understanding the Data Science Workflow which follows the data collection, exploration, modeling and predictions. Many aspects of  the data science toolbox were implemented such as Python, Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib and Machine Learning Algorithms.  
+* I understood the problem of overfitting/underfitting the data. This was rectified. 
+* The importance of a solid dataset is vital for the success of a model. The models that may not have enough features/variables because of a bad dataset will not prove useful. 
+* I could have used a shot log dataset over a play by play-by-play dataset. There could be more variables that may help in predicting target (ShotOutcome) better.
+* Adding more seasons and increasing the size of the dataset. This would be more representative of the players. 
 * Working on improving scores in Random Forests/Decision Trees. These scores were underwhelming compared to Logistic Regression. 
-* Applying other models as well, Neural Nets, k-NN.
+* Applying other models as well, XgBoost, k-NN. These are other classification models that are known for their high accuracy scores especially Xgboost. 
 * Spend less time doing EDA, more time modeling. 
-* Creating a recommendation system based on players. Recommend shots type + distance.
-* Use a shot log dataset that could help create a more accurate model. 
+* Creating a recommendation system based on players. Recommend shots type + distance. This could provide a nice service for anyone who is interested in understanding the best way to learn about the players
+* Use a shot log dataset that helps create a more accurate model. 
 
