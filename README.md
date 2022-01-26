@@ -186,6 +186,7 @@ Below is the confusion matrix as well as the various scores such as the precisio
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/image6.png)
 
 Below is a diagram of a decison tree. 
+
 ![Alt Text](https://github.com/durgesh-plum/NBA-Shot-Predictor/blob/main/Capturedfdfdfdfdf.PNG)
 
 Random Forests:
